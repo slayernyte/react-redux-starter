@@ -1,0 +1,64 @@
+{
+  "env" : {
+    "browser" : true,
+    "es6" : true,
+    "node" : true
+  },
+  "parserOptions" : {
+    "ecmaVersion" : 6,
+    "sourceType" : "module",
+    "ecmaFeatures" : {
+      "experimentalObjectRestSpread" : true,
+      "jsx" : true,
+      "modules" : true
+    }
+  },
+  "plugins" : [
+    "react"
+  ],
+  "extends" : ["airbnb", "plugin:react/recommended"],
+  "rules" : {
+    "no-tabs" : 0,
+    "no-unused-vars" : "warn",
+    "indent" : [2, "tab", {
+      "SwitchCase" : 1
+    }],
+    "max-len" : [1, {
+      "comments" : 120,
+      "code" : 100
+    }],
+    "comma-dangle" : ["error", "never"],
+    "spaced-comment" : ["error", "always", {
+      "block" : {
+        "markers" : ["*"],
+        "exceptions" : [],
+        "balanced" : true
+      }
+    }],
+    "key-spacing" : ["error", {
+      "beforeColon" : true,
+      "afterColon" : true
+    }],
+    "padded-blocks" : ["error", "always"],
+    "arrow-body-style" : ["error", "always"],
+    "prefer-const" : ["warn", {
+      "destructuring" : "all",
+      "ignoreReadBeforeAssign" : true
+    }],
+    "brace-style" : "error",
+    "id-length" : ["warn", {
+      "min" : 3
+    }],
+    "newline-per-chained-call" : ["error", {
+      "ignoreChainWithDepth" : 1
+    }],
+    "react/jsx-curly-spacing" : [2, "always", {
+      "allowMultiline" : true
+    }],
+    "import/no-unresolved" : ["warn"],
+    "react/jsx-indent" : ["error", "tab"],
+    "react/jsx-indent-props" : ["error", "tab"],
+    "react/jsx-first-prop-new-line" : ["error", "never"],
+    "react/forbid-prop-types" : ["error", { "forbid": ["any"] }]
+  }
+}
