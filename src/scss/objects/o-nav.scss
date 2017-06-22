@@ -1,0 +1,37 @@
+@import "../utils/variables";
+
+.o-nav {
+	font-size: 1rem;
+	background: $rgba-primary-1;
+	margin: 1em;
+	border-radius: 3px;
+	padding: .75em;
+	list-style: none;
+
+	&__item {
+		margin-bottom: .5em;
+	}
+
+	&__link {
+		text-decoration: none;
+
+		color: $rgba-primary-4;
+		text-transform: capitalize;
+
+		&::before {
+			content: "\1f984";
+			display: inline-block;
+			margin-right: .45em;
+			// transition: transform 500ms;
+		}
+		&:hover {
+			border-bottom: 1px dotted $rgba-secondary-1-4;
+
+			&::before {
+				transform: rotate(10deg);
+			}
+
+
+		}
+	}
+}

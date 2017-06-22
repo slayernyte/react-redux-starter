@@ -1,0 +1,114 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.c-app {
+
+	@include CG_TABLET{
+		display: flex;
+		flex-wrap: wrap;
+
+	}
+
+	&__header,
+	&__footer {
+
+		@include CG_TABLET {
+			width: 100%;
+		}
+
+	}
+
+	&__header {
+		// display:none;
+		@include CG_TABLET {
+			//height: $HEADING_HEIGHT;
+		}
+	}
+
+	&__footer {
+	}
+
+	&__sidebar {
+		width: 100%;
+
+		@include CG_TABLET {
+
+			flex-basis: $SIDEBAR_WIDTH;
+			// width: $SIDEBAR_WIDTH;
+		}
+	}
+
+	&__content {
+		flex-grow: 1;
+		flex-basis: 70%;
+	}
+
+	&__sidebar,
+	&__content {
+
+		@include CG_TABLET {
+			// height: $MAIN_CONTENT_HEIGHT;
+		}
+	}
+
+
+}
+
+@supports(display:grid) {
+	.c-app {
+		// background: yellow;
+		display: grid;
+		grid-gap: 0;
+		grid-template-areas:
+			"header"
+			"sidebar"
+			"content"
+			"footer";
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+
+		@include CG_TABLET {
+			// background: lightcoral;
+			grid-gap: .75em;
+			grid-template-areas:
+				"header header"
+				"sidebar content"
+				"footer footer";
+			grid-template-columns: minmax(max-content, $SIDEBAR_WIDTH)
+			1fr;
+			grid-template-rows: minmax(max-content, 50px)
+			1fr
+			max-content;
+			height: 100vh;
+		}
+
+		&__header {
+			grid-area: header;
+			// height: auto;
+			// width: auto;
+		}
+
+		&__sidebar {
+			grid-area: sidebar;
+			// width: auto;
+			// height: auto;
+		}
+
+		&__content {
+			grid-area: content;
+			// height: auto;
+			// width: auto;
+		}
+
+		&__footer {
+			grid-area: footer;
+			position: unset;
+			// height: auto;
+			// width: auto;
+		}
+
+		/* & > * {
+          outline: 1px solid red;
+      } */
+	}
+}

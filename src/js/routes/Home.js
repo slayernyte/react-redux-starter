@@ -1,59 +1,25 @@
 import React from 'react';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import * as scoreActions from '../actions/scoreActionCreator';
+import PropTypes from 'prop-types';
+import '../../scss/base/utils.scss';
+import '../../scss/objects/o-main-content.scss';
+import '../../scss/objects/o-content-txt.scss';
 
 const Home = (props) => {
 
-	function setScore(score, id) {
-
-		props.actions.setScore(score, id);
-
-	}
-
-	function incScore(score, id) {
-
-		props.actions.incrementScore(score, id);
-
-	}
-	console.log('props', props.scores);
-
 	return (
-		<div>
-			<h2>Home</h2>
-			<ul>
-		{
-			props.scores.map((item) => {
-					return <li key={ item.uid }>{ item.name } : { item.score }
-					<button onClick={setScore.bind(null, 20, item.uid)}>set score</button>
-						<button onClick={incScore.bind(null, 20, item.uid)}>incr score</button> </li>
-			})
-		}
-			</ul>
+		<div className="o-main-content u-depth-1">
+			<p className="o-content-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet exercitationem
+				facilis porro recusandae rem, ut. Accusamus aperiam beatae consequuntur impedit iure libero, magnam nobis nulla
+				omnis quas sed temporibus ullam.</p>
+			<p className="o-content-txt">A architecto autem doloribus dolorum ducimus eligendi est eum eveniet explicabo
+				impedit inventore ipsum neque nobis nostrum numquam odio pariatur perferendis quam quas quia quod ratione sequi
+				suscipit tempora, voluptas!</p>
+			<p className="o-content-txt">Aliquid consectetur ducimus earum, et fuga fugit, nam, nesciunt numquam odio pariatur
+				praesentium qui quo suscipit? A autem dolore dolorum id in iste, laborum non recusandae repudiandae soluta.
+				Magnam, minus?</p>
 		</div>
 
 	);
 };
 
-function mSTP(state, ownProps) {
-
-	console.log('mSTP', state, ownProps);
-
-	return {
-		scores : state.scores
-	};
-
-}
-
-function mDTP(dispatch) {
-
-	return {
-		// setScore : (scores, user) => {
-		//   dispatch(setScore(scores, user))
-		// }
-		actions : bindActionCreators(scoreActions, dispatch)
-	};
-
-}
-
-export default connect(mSTP, mDTP)(Home);
+export default Home;

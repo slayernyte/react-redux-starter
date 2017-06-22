@@ -1,0 +1,13 @@
+@mixin CG_TABLET {
+
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin CG_DESKTOP {
+
+	@media (min-width: 1286px) {
+		@content;
+	}
+}

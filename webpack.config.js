@@ -32,11 +32,11 @@ module.exports = {
       // },
       {
         include: path.resolve(__dirname, 'src/js'),
-        test: /\.js$/,
+        test : /\.(js|jsx)$/,
         loader: 'babel-loader'
       },
       {
-        test: /\.css$/,
+        test: /\.(css|scss)$/,
 				use: ExtractTextPlugin.extract({
 					use: ['css-loader', 'sass-loader']
 				})

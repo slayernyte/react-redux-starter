@@ -1,0 +1,21 @@
+@import "../utils/variables";
+@import url('https://fonts.googleapis.com/css?family=Lobster|Raleway:200,400,700');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	background-color: $rgba-primary-2;
+}
+
+//Poorwomans reset
+*,
+*::before,
+*::after {
+	margin: 0;
+	box-sizing: border-box;
+}

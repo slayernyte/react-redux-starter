@@ -1,0 +1,12 @@
+@import "../utils/variables";
+
+.o-content-txt {
+	font-size: 1rem;
+	margin: .75em;
+
+	&::first-letter {
+		color: $rgba-secondary-1-4;
+		font-size: 1.5em;
+		font-family: 'Lobster', sans-serif;
+	}
+}
